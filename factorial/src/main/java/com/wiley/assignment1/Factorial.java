@@ -34,13 +34,24 @@ public class Factorial {
 		*/
 
 		//YOUR CODE STARTS HERE
+		 //takes user input and saves as integer num.
+		 //tests if input is not integer then closes program.
+		 try {
+			 num =Integer.parseInt(scanner.nextLine());
+		 } catch (NumberFormatException error){
+		 }
+		 //tests num for range, if in range then returns number. if not, then prints statement and returns -1
+		 if (num >=1 && num <=10) {
+			 return num;
+		 } else
+			 this.printStream.print("Please Enter valid Input as number between 1 and 10 only, both inclusive");
+		 	return -1;}
 
-		return -1;
 
 		//YOUR CODE ENDS HERE
 		 
 			
-	 }
+
 	
 	 
 	 private void calculateFactorial(int num) {
@@ -53,11 +64,15 @@ public class Factorial {
 		 
 		int result = 1;
 		//YOUR CODE STARTS HERE
-
+		 //calculates factorial
+		for(int i = 1; i <= num; ++i) {
+			result *= i;
+		 }
+		 this.printStream.println("Factorial of: " + num);
  
 
 		//YOUR CODE ENDS HERE
-		this.printStream.print("The Factorial is: " + result);		
+		this.printStream.print("The Factorial is: " + result);
 		
 	 }
 	 
